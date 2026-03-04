@@ -1,3 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@theme {
+  --color-brand-dark: #4C1208;
+  --color-brand-primary: #7B1D26;
+  --color-brand-accent: #893A49;
+  --color-brand-soft: #CA99AB;
+  --color-brand-background: #E4CDDD;
+}
+body{
+  font-family: 'Inter', sans-serif;
+}
+
+h1,h2,h3,h4{
+  font-family: 'Playfair Display', serif;
+}
+
+html{
+scroll-behavior: smooth;
+}
