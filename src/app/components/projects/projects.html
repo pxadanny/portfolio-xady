@@ -1,1 +1,87 @@
-<p>projects works!</p>
+<div class="flex justify-center bg-brand-background px-6 py-20">
+
+  <div class="w-full max-w-6xl flex flex-col gap-16">
+
+    <!-- TITULO -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-brand-dark text-4xl sm:text-5xl font-black">
+        Proyectos Destacados
+      </h1>
+
+      <div class="w-full grid md:grid-cols-3 gap-12 items-stretch">
+
+  <div *ngFor="let project of projects"
+       class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col
+              transition duration-300 hover:scale-[1.03] hover:shadow-2xl">
+
+    <!-- Imagen -->
+    <div class="relative h-48 overflow-hidden">
+
+      <img
+        [src]="project.imagen"
+        class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+      >
+
+      <div class="absolute inset-0
+                  bg-gradient-to-t from-brand-primary/80 via-brand-primary/40 to-transparent
+                  opacity-0 group-hover:opacity-100
+                  transition duration-500">
+      </div>
+
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-6 flex flex-col gap-4 flex-1">
+
+      <h3 class="text-xl font-bold text-brand-dark">
+        {{project.titulo}}
+      </h3>
+
+      <!-- Tecnologías -->
+      <div class="flex flex-wrap gap-2">
+        <span *ngFor="let tech of project.tecnologias"
+              class="bg-brand-soft/40 text-brand-primary text-xs px-3 py-1 rounded-full font-semibold">
+
+          {{tech}}
+
+        </span>
+      </div>
+
+      <p class="text-gray-600 text-sm">
+        {{project.descripcion}}
+      </p>
+
+      <!-- Botones -->
+      <div class="flex gap-3 mt-auto">
+
+        <a [href]="project.demo"
+           class="flex-1 bg-brand-dark text-white py-3 rounded-lg font-semibold
+                  hover:bg-brand-primary transition text-center">
+
+          Ver Proyecto
+
+        </a>
+
+        <a [href]="project.codigo"
+           class="flex items-center justify-center px-4 py-3 rounded-lg border border-gray-300
+                  text-brand-dark hover:bg-brand-dark hover:text-white transition">
+
+          <i class="fa-solid fa-code"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+      
+    </div>
+
+    </div>
+
+  </div>
+
