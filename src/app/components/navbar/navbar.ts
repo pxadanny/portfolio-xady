@@ -11,4 +11,14 @@ export class Navbar {
 
   menuOpen = false;
 
+  goToSection(section: string) {
+  this.menuOpen = false;
+
+  setTimeout(() => {
+    document.getElementById(section)?.scrollIntoView({
+      
+    });
+  }, 100);
+}
+
 }
