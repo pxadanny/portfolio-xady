@@ -1,22 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+
 @theme {
-  --color-brand-dark: #4C1208;
-  --color-brand-primary: #7B1D26;
-  --color-brand-accent: #893A49;
-  --color-brand-soft: #CA99AB;
-  --color-brand-background: #E4CDDD;
-}
-body{
-  font-family: 'Inter', sans-serif;
+  /* Identidad Burgundy Editorial */
+  --color-brand-dark: #3B010B;
+  --color-brand-primary: #75162D;
+  --color-brand-accent: #75162D;
+  --color-brand-soft: #9E8B75;
+  --color-brand-background: #F2E5C6;
+  --color-brand-cream: #F2E5C6;
+  --color-brand-gold: #B58C4F;
+  --color-brand-olive: #43432C;
+
+  /* Sistema tipográfico */
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'DM Sans', Arial, sans-serif;
 }
 
-h1,h2,h3,h4{
-  font-family: 'Playfair Display', serif;
+html {
+  scroll-behavior: smooth;
 }
 
-html{
-scroll-behavior: smooth;
+body {
+  margin: 0;
+  background: var(--color-brand-background);
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-editorial);
+}
+
+::selection {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-cream);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
