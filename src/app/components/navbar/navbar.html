@@ -1,108 +1,39 @@
-<div class="bg-brand-soft/50 backdrop-blur-lg shadow-md fixed w-full z-50">
-  <div class="w-full mx-auto px-12 py-4 flex justify-between items-center">
+<header class="fixed inset-x-0 top-0 z-50 border-b border-brand-gold/25 bg-brand-dark/95 text-brand-cream shadow-lg shadow-brand-dark/10 backdrop-blur-xl">
+  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-10 lg:px-12" aria-label="Navegación principal">
+    <a href="#home" aria-label="Xadanny, ir al inicio" class="font-editorial text-4xl font-semibold leading-none tracking-[0.04em] text-brand-cream">
+      Xadanny<span class="text-brand-gold">.</span>
+    </a>
 
-    <!-- LOGO -->
-    <a href="#home">
-  <h1 class="text-3xl font-bold text-brand-dark">Xadanny</h1>
-</a>
-
-    <!-- MENU DESKTOP -->
-    <ul class="hidden lg:flex gap-10 text-xl">
-
-        <a href="#about"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Sobre mí
-</a>
-<a href="#habilities"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Habilidades
-</a>
-<!-- <a href="#projects"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Proyectos
-</a> -->
-<a href="#contact"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Contacto
-</a>
-
+    <ul class="hidden items-center gap-9 lg:flex">
+      <li><a href="#about" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Sobre mí</a></li>
+      <li><a href="#habilities" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Habilidades</a></li>
+      <li><a href="#contact" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Contacto</a></li>
     </ul>
 
-    <!-- BOTON DESKTOP -->
-         <button><a 
-href="https://github.com/pxadanny"
-target="_blank"
-rel="noopener noreferrer"
-class="hover:text-gray-300 transition"
->
-<i class="fa-brands fa-github fa-3x text-brand-primary" ></i>
-</a></button>
+    <div class="hidden items-center gap-5 lg:flex">
+      <a href="https://github.com/pxadanny" target="_blank" rel="noopener noreferrer"
+         aria-label="Ver el GitHub de Xadanny"
+         class="text-2xl text-brand-cream transition-colors hover:text-brand-gold focus-visible:text-brand-gold">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="#contact" class="rounded-full border border-brand-gold/70 px-5 py-2 text-sm font-semibold text-brand-cream transition-colors hover:bg-brand-gold hover:text-brand-dark focus-visible:bg-brand-gold focus-visible:text-brand-dark">
+        Trabajemos juntos <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs" aria-hidden="true"></i>
+      </a>
+    </div>
 
-
-    <!-- BOTON HAMBURGUESA -->
-    <button
-      (click)="menuOpen = !menuOpen"
-      class="lg:hidden text-brand-dark text-3xl">
-      ☰
+    <button type="button" (click)="menuOpen = !menuOpen"
+            [attr.aria-expanded]="menuOpen" aria-controls="mobile-menu" aria-label="Abrir o cerrar menú"
+            class="text-2xl text-brand-cream lg:hidden">
+      <span aria-hidden="true">{{ menuOpen ? '✕' : '☰' }}</span>
     </button>
+  </nav>
 
-  </div>
-
-  <!-- MENU MOBILE / TABLET -->
-  <div *ngIf="menuOpen" class="lg:hidden backdrop-blur-lg px-12 pb-6">
-
-    <ul class="flex flex-col gap-6 text-lg">
-
-              <a (click)="goToSection('about')"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Sobre mí
-</a>
-<a (click)="goToSection('habilities')"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Habilidades
-</a>
-<!-- <a (click)="goToSection('projects')"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Proyectos
-</a> -->
-<a (click)="goToSection('contact')"
-class="relative text-brand-accent font-semibold hover:text-brand-primary
-after:content-[''] after:absolute after:left-1/2 after:-bottom-2
-after:h-[2.5px] after:w-0 after:bg-brand-primary
-after:transition-all after:duration-300
-hover:after:w-full hover:after:left-0">
-Contacto
-</a>
-
+  <div *ngIf="menuOpen" id="mobile-menu" class="border-t border-brand-gold/20 bg-brand-dark px-6 pb-7 pt-5 sm:px-10 lg:hidden">
+    <ul class="flex flex-col gap-5">
+      <li><a href="#about" (click)="goToSection('about')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Sobre mí</a></li>
+      <li><a href="#habilities" (click)="goToSection('habilities')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Habilidades</a></li>
+      <li><a href="#contact" (click)="goToSection('contact')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Contacto</a></li>
+      <li><a href="https://github.com/pxadanny" target="_blank" rel="noopener noreferrer" class="block text-base font-medium text-brand-gold">GitHub <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs" aria-hidden="true"></i></a></li>
     </ul>
-
   </div>
-</div>
+</header>
