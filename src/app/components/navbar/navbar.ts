@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -8,17 +8,18 @@ import { NgIf } from '@angular/common';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-
   menuOpen = false;
 
-  goToSection(section: string) {
-  this.menuOpen = false;
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
 
-  setTimeout(() => {
-    document.getElementById(section)?.scrollIntoView({
-      
-    });
-  }, 100);
-}
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
 
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.closeMenu();
+  }
 }
