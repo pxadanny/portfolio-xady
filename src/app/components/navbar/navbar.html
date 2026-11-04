@@ -6,6 +6,7 @@
     </a>
 
     <ul class="hidden items-center gap-9 lg:flex">
+      <li><a href="#services" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Qué hago</a></li>
       <li><a href="#about" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Sobre mí</a></li>
       <li><a href="#habilities" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Habilidades</a></li>
       <li><a href="#contact" class="text-sm font-medium tracking-wide text-brand-cream/85 transition-colors hover:text-brand-gold focus-visible:text-brand-gold">Contacto</a></li>
@@ -31,6 +32,7 @@
 
   <div *ngIf="menuOpen" id="mobile-menu" class="border-t border-brand-gold/20 bg-brand-dark px-6 pb-7 pt-5 sm:px-10 lg:hidden">
     <ul class="flex flex-col gap-5">
+      <li><a href="#services" (click)="goToSection('services')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Qué hago</a></li>
       <li><a href="#about" (click)="goToSection('about')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Sobre mí</a></li>
       <li><a href="#habilities" (click)="goToSection('habilities')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Habilidades</a></li>
       <li><a href="#contact" (click)="goToSection('contact')" class="block text-base font-medium text-brand-cream transition-colors hover:text-brand-gold">Contacto</a></li>
