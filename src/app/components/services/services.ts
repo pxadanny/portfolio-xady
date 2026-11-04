@@ -10,24 +10,24 @@ export class Services {
   services = [
     {
       number: '01',
-      icon: 'fa-window-maximize',
-      title: 'Desarrollo web',
-      description: 'Sitios e interfaces modernas que combinan diseño cuidado, funcionalidad y una experiencia fluida.',
-      detail: 'Interfaces que conectan con tus usuarios',
+      icon: 'fa-laptop-code',
+      title: 'Desarrollo de software',
+      description: 'Aplicaciones web, sistemas y soluciones digitales que combinan funcionalidad, estructura y una experiencia de uso clara.',
+      detail: 'Soluciones pensadas para evolucionar',
     },
     {
       number: '02',
-      icon: 'fa-mobile-screen-button',
-      title: 'Experiencias adaptables',
-      description: 'Diseños pensados para funcionar y lucir bien en computadora, tablet y celular.',
-      detail: 'Un mismo cuidado en cada pantalla',
+      icon: 'fa-object-group',
+      title: 'Diseño y experiencias digitales',
+      description: 'Interfaces intuitivas, atractivas y adaptables que cuidan cada interacción en computadora, tablet y celular.',
+      detail: 'Diseño con intención en cada pantalla',
     },
     {
       number: '03',
-      icon: 'fa-code-branch',
-      title: 'Aplicaciones bien construidas',
-      description: 'Componentes organizados y soluciones que facilitan la evolución y el mantenimiento del proyecto.',
-      detail: 'Código preparado para crecer',
+      icon: 'fa-diagram-project',
+      title: 'Integración y tecnología',
+      description: 'Conexión entre frontend, backend, APIs y bases de datos para construir aplicaciones que funcionen como un todo.',
+      detail: 'Tecnologías que trabajan en conjunto',
     },
   ];
 }
