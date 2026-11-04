@@ -1,33 +1,34 @@
-<div class="relative overflow-hidden bg-brand-cream px-6 pb-24 pt-14 sm:px-10 lg:px-12 lg:pb-32 lg:pt-20">
+<section class="relative overflow-hidden bg-brand-cream px-4 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-16 lg:px-12 lg:pb-28 lg:pt-20">
   <div class="mx-auto max-w-7xl">
-    <div class="mb-14 grid items-end gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-      <div>
-        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-brand-primary">01 / Qué puedo crear</p>
-        <h2 class="font-editorial text-5xl leading-[0.95] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
+    <div class="mb-9 grid items-end gap-5 sm:mb-12 lg:mb-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+      <div class="min-w-0">
+        <p class="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-primary sm:mb-5 sm:text-xs sm:tracking-[0.28em]">01 / Qué puedo crear</p>
+        <h2 class="font-editorial text-[clamp(2.75rem,8vw,4.5rem)] leading-[0.98] tracking-tight text-brand-dark">
           Ideas que toman <em class="font-display font-normal text-brand-primary">forma digital.</em>
         </h2>
       </div>
-      <p class="max-w-lg text-base leading-8 text-brand-dark/75 lg:ml-auto lg:text-lg">
+      <p class="max-w-lg text-sm leading-7 text-brand-dark/80 sm:text-base sm:leading-8 lg:ml-auto lg:text-lg">
         Cada proyecto es una oportunidad de crear algo útil, intuitivo y visualmente memorable.
         Estas son las áreas en las que puedo aportar valor.
       </p>
     </div>
-    <div class="grid gap-5 lg:grid-cols-3">
-      <article *ngFor="let service of services" class="group relative flex min-h-80 flex-col justify-between overflow-hidden rounded-2xl border border-brand-dark/15 bg-white/50 p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-gold hover:bg-white/75 hover:shadow-lg hover:shadow-brand-dark/10 sm:p-9">
-        <div class="flex items-start justify-between">
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+      <article *ngFor="let service of services"
+        class="group relative flex min-w-0 flex-col justify-between overflow-hidden rounded-2xl border border-brand-dark/15 bg-white/50 p-6 transition duration-300 hover:border-brand-gold hover:bg-white/75 hover:shadow-lg hover:shadow-brand-dark/10 sm:min-h-72 sm:p-8 lg:min-h-80 lg:hover:-translate-y-1">
+        <div class="flex items-start justify-between gap-4">
           <span class="font-editorial text-2xl text-brand-primary">{{service.number}}</span>
-          <span class="flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/50 text-xl text-brand-primary">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brand-gold/50 text-xl text-brand-primary sm:h-12 sm:w-12">
             <i class="fa-solid {{service.icon}}" aria-hidden="true"></i>
           </span>
         </div>
-        <div class="mt-12">
-          <h3 class="font-editorial text-4xl font-semibold leading-none text-brand-dark">{{service.title}}</h3>
-          <p class="mt-4 text-sm leading-7 text-brand-dark/75 sm:text-base">{{service.description}}</p>
-          <div class="mt-7 flex items-center gap-3 border-t border-brand-dark/15 pt-5 text-xs font-medium text-brand-primary">
+        <div class="mt-10 sm:mt-12">
+          <h3 class="font-editorial text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">{{service.title}}</h3>
+          <p class="mt-3 text-sm leading-7 text-brand-dark/80 sm:mt-4 sm:text-base">{{service.description}}</p>
+          <div class="mt-6 border-t border-brand-dark/15 pt-5 text-xs font-medium leading-5 text-brand-primary sm:mt-7">
             <span>{{service.detail}}</span>
           </div>
         </div>
       </article>
     </div>
   </div>
-</div>
+</section>
