@@ -1,30 +1,46 @@
-<div class="bg-brand-olive px-6 py-24 text-brand-cream sm:px-10 lg:px-12 lg:py-32">
-  <div class="mx-auto max-w-7xl">
-    <div class="mb-14 grid items-end gap-6 lg:grid-cols-2">
+<section class="relative isolate overflow-hidden bg-brand-olive px-6 py-20 text-brand-cream sm:px-10 lg:px-12 lg:py-28">
+  <div aria-hidden="true" class="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-brand-gold/10 blur-[110px]"></div>
+
+  <div class="relative mx-auto max-w-7xl">
+    <div class="mb-11 grid items-end gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
       <div>
-        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[#E4C697]">03 / Herramientas</p>
-        <h2 class="font-editorial text-6xl leading-[0.95] sm:text-7xl">
-          Ideas respaldadas por <em class="font-display text-[#E4C697]">tecnología.</em>
+        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[#E4C697]">03 / Mi universo tecnológico</p>
+        <h2 class="max-w-3xl font-editorial text-5xl leading-[0.98] text-brand-cream sm:text-6xl lg:text-7xl">
+          Tecnología al servicio de <em class="font-display font-normal text-[#E4C697]">las ideas.</em>
         </h2>
       </div>
-      <p class="max-w-xl text-base leading-8 text-brand-cream/80 lg:ml-auto">
-        Estas son las tecnologías y herramientas que forman parte de mi trabajo.
-        Me ayudan a convertir conceptos en experiencias digitales funcionales.
+      <p class="max-w-lg text-base leading-8 text-brand-cream/85 lg:ml-auto">
+        Lenguajes, plataformas y herramientas con las que construyo soluciones digitales,
+        desde la experiencia de usuario hasta la lógica y los datos.
       </p>
     </div>
-    <div class="grid gap-7 md:grid-cols-2">
-      <div *ngFor="let category of skillCategories" class="rounded-2xl border border-brand-cream/25 bg-brand-cream/5 p-7 sm:p-8">
-        <div class="mb-6 flex items-center gap-3">
-          <span aria-hidden="true" class="h-px w-8 bg-brand-gold"></span>
-          <h3 class="font-editorial text-3xl text-brand-cream">{{category.titulo}}</h3>
+
+    <div class="grid items-stretch gap-5 lg:grid-cols-2">
+      <article *ngFor="let category of skillCategories"
+        class="group flex flex-col rounded-[1.5rem] border border-brand-cream/25 bg-brand-cream/[0.07] p-6 transition-colors duration-300 hover:border-brand-gold/70 hover:bg-brand-cream/[0.11] sm:p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E4C697]">
+              {{category.numero}} / {{category.etiqueta}}
+            </p>
+            <h3 class="font-editorial text-3xl leading-tight text-brand-cream sm:text-4xl">{{category.titulo}}</h3>
+          </div>
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brand-gold/45 bg-brand-dark/20 text-lg text-[#E4C697]">
+            <i class="fa-solid {{category.icon}}" aria-hidden="true"></i>
+          </span>
         </div>
-        <div class="flex flex-wrap gap-3">
-          <div *ngFor="let skill of category.skills" class="flex items-center gap-2 rounded-full border border-brand-cream/25 bg-brand-dark/10 px-3 py-2 text-sm text-brand-cream transition hover:border-brand-gold">
-            <img [src]="skill.icon" [alt]="skill.titulo" loading="lazy" class="h-6 w-6 object-contain" />
-            <span>{{skill.titulo}}</span>
+        <p class="mt-2 max-w-md text-sm leading-6 text-brand-cream/80">{{category.descripcion}}</p>
+
+        <div class="mt-6 flex flex-wrap content-start gap-2.5 border-t border-brand-cream/20 pt-5">
+          <div *ngFor="let skill of category.skills"
+            class="inline-flex min-h-11 items-center gap-2 rounded-full border border-brand-cream/30 bg-brand-dark/25 py-1.5 pl-1.5 pr-4 text-sm text-brand-cream">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#DFCEB0] bg-[#F2E5C6] shadow-sm">
+              <img [src]="skill.icon" alt="" loading="lazy" class="h-[23px] w-[23px] object-contain" />
+            </span>
+            <span class="font-medium">{{skill.titulo}}</span>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </div>
-</div>
+</section>
