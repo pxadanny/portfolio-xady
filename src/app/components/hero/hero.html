@@ -1,43 +1,41 @@
-<section class="relative isolate flex min-h-screen items-center overflow-hidden bg-brand-dark px-6 pb-20 pt-36 text-brand-cream sm:px-10 sm:pt-40 lg:px-12 lg:py-28">
-  <!-- Luz ambiental sutil -->
-  <div aria-hidden="true" class="pointer-events-none absolute -right-32 top-16 h-96 w-96 rounded-full bg-brand-primary/40 blur-[120px]"></div>
-  <div aria-hidden="true" class="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-brand-olive/35 blur-[110px]"></div>
-
-  <div class="relative mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-2 lg:gap-20">
-    <div class="flex flex-col items-start gap-7">
-      <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.26em] text-[#D6B585] sm:text-sm">
-        <span aria-hidden="true" class="h-px w-8 bg-brand-gold"></span>
-        Frontend Developer
+<section class="relative isolate flex min-h-screen flex-col overflow-hidden bg-brand-dark px-6 pb-8 pt-28 text-brand-cream sm:px-10 lg:px-12 lg:pb-8 lg:pt-24">
+  <div aria-hidden="true" class="pointer-events-none absolute -right-40 top-12 h-[32rem] w-[32rem] rounded-full bg-brand-primary/40 blur-[120px]"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-brand-olive/30 blur-[120px]"></div>
+  <div class="relative mx-auto grid w-full max-w-7xl flex-1 items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+    <div class="flex flex-col items-start">
+      <p class="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#D6B585]">
+        <span class="h-px w-9 bg-brand-gold" aria-hidden="true"></span>
+        Diseño · Desarrollo · Creatividad
       </p>
-
-      <h1 class="font-display text-[clamp(3.7rem,6.3vw,7rem)] leading-[0.96] tracking-[-0.025em] text-brand-cream">
-        Hola, soy <span class="text-white">Xadanny.</span>
-        <em class="mt-3 block font-normal text-[#D6B585]">Creo experiencias digitales.</em>
+      <h1 class="max-w-3xl font-editorial text-[clamp(4.2rem,7vw,7.5rem)] font-medium leading-[0.85] tracking-[-0.045em] text-brand-cream">
+        Lo digital también puede ser
+        <em class="mt-4 block font-display font-normal text-[#D6B585]">extraordinario.</em>
       </h1>
-
-      <p class="max-w-xl text-base leading-relaxed text-brand-cream/85 sm:text-lg">
-        Soy Xadanny Pérez, desarrolladora frontend. Transformo ideas en interfaces modernas,
-        funcionales y cuidadas hasta el último detalle.
+      <p class="mt-9 max-w-xl text-base leading-8 text-brand-cream/80 sm:text-lg">
+        Soy Xadanny Pérez. Transformo ideas en experiencias digitales con intención,
+        personalidad y atención a cada detalle.
       </p>
-
-      <div class="flex w-full flex-col gap-4 pt-1 sm:w-auto sm:flex-row">
-        <a href="#contact" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand-cream px-7 py-3.5 text-sm font-bold text-brand-dark transition-transform duration-300 hover:-translate-y-1 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold">
-          Hablemos de tu proyecto
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a href="#services" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand-cream px-7 py-4 text-sm font-bold text-brand-dark transition duration-300 hover:-translate-y-1 hover:bg-white">
+          Descubre lo que hago <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
         </a>
-        <a href="#about" class="inline-flex items-center justify-center rounded-full border border-brand-gold/65 px-7 py-3.5 text-sm font-semibold text-brand-cream transition-colors hover:bg-brand-gold hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-gold">
-          Conóceme
+        <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-brand-gold/65 px-7 py-4 text-sm font-semibold text-brand-cream transition duration-300 hover:bg-brand-gold hover:text-brand-dark">
+          Hablemos de tu idea
         </a>
       </div>
     </div>
-
-    <div class="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none">
-      <div aria-hidden="true" class="absolute -inset-3 rounded-[2.1rem] border border-brand-gold/35"></div>
-      <img src="codigo.jpg" alt="Código en una computadora, parte de mi trabajo como desarrolladora"
-           class="relative aspect-[4/5] w-full rounded-[1.7rem] object-cover shadow-2xl shadow-black/30" />
-      <div class="absolute -bottom-5 -left-3 rounded-sm border border-brand-gold/45 bg-brand-dark/95 px-5 py-3 backdrop-blur-md sm:-left-6">
-        <span class="font-editorial text-xl tracking-[0.12em] text-brand-cream">Design · Code · Create</span>
+    <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
+      <div class="absolute inset-8 rounded-full border border-brand-gold/30"></div>
+      <div class="absolute inset-0 rounded-full border border-brand-gold/10"></div>
+      <div class="relative flex aspect-square w-full items-center justify-center rounded-full bg-brand-primary/15">
+        <img src="branding/monograma-dark.svg" alt="Monograma X de Xadanny con órbita y estrella" class="h-[83%] w-[83%] object-contain drop-shadow-xl" />
       </div>
+      <span aria-hidden="true" class="absolute -right-2 top-12 text-3xl text-brand-gold">✦</span>
+      <span class="absolute bottom-5 left-0 rounded-full border border-brand-gold/35 bg-brand-dark/90 px-5 py-3 font-editorial text-xl text-brand-cream backdrop-blur">Design · Code · Create</span>
     </div>
+  </div>
+  <div class="relative mx-auto mt-6 flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-brand-gold/25 pt-4 text-[11px] uppercase tracking-[0.25em] text-brand-cream/70">
+    <span>Creatividad con propósito</span>
+    <a href="#services" class="transition hover:text-brand-cream">Desliza para explorar ↓</a>
   </div>
 </section>
