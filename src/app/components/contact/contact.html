@@ -1,148 +1,75 @@
-    <div class="flex justify-center bg-brand-cream px-6 py-24 sm:px-10 lg:px-12 lg:py-32">
+<section class="bg-brand-cream px-4 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28">
+  <div class="mx-auto grid w-full max-w-7xl gap-9 rounded-2xl border border-brand-dark/15 bg-[#F7F0E3] p-5 sm:gap-12 sm:p-8 lg:grid-cols-2 lg:gap-14 lg:p-12 xl:p-16">
+    <div class="flex min-w-0 flex-col gap-5 text-left sm:gap-6">
+      <h2 class="font-editorial text-[clamp(2.75rem,8vw,4.5rem)] font-semibold leading-[0.98] text-brand-dark">
+        Hagamos algo <em class="font-display font-normal text-brand-primary">extraordinario.</em>
+      </h2>
 
-    <div class="w-full max-w-7xl grid lg:grid-cols-2 gap-12  bg-[#F7F0E3] p-6 sm:p-10 lg:p-16 rounded-2xl border border-brand-dark/15">
-
-        <!-- TEXTO -->
-        <div class="flex flex-col gap-6 text-center md:text-left">
-
-        <h1 class="font-editorial font-semibold text-5xl sm:text-6xl lg:text-7xl text-brand-dark leading-[0.95]">
-            Hagamos algo <em class="font-display font-normal text-brand-primary">extraordinario.</em>
-        </h1>
-
-        <p class="text-gray-900 text-base sm:text-md lg:text-lg  max-w-xl mx-auto md:mx-0">
+      <p class="max-w-xl text-sm leading-7 text-brand-dark/85 sm:text-base sm:leading-8 lg:text-lg">
         ¿Tienes una idea, un proyecto o una oportunidad para colaborar? Me encantará conocerla y explorar cómo podemos darle forma.
-        </p>
-        <div class="flex flex-col gap-4 mt-4">
+      </p>
 
-    <!-- Email -->
-    <a 
-        href="mailto:pxadanny@gmail.com"
-        target="_blank"
-    rel="noopener noreferrer"
-        class="flex items-center gap-3 text-brand-accent hover:text-brand-dark transition"
-    >
-        <i class="fa-solid fa-envelope text-lg"></i>
-        <span class="font-bold">pxadanny@gmail.com</span>
-    </a>
+      <div class="mt-1 flex flex-col items-start gap-3 sm:mt-4 sm:gap-4">
+        <a href="mailto:pxadanny@gmail.com" class="inline-flex max-w-full items-center gap-3 break-all text-sm font-semibold text-brand-primary transition hover:text-brand-dark sm:text-base">
+          <i class="fa-solid fa-envelope shrink-0 text-lg" aria-hidden="true"></i>
+          <span>pxadanny@gmail.com</span>
+        </a>
 
-    <!-- WhatsApp -->
-    <a 
-    href="https://wa.me/527715263209?text=Hola%20Xadanny,%20vi%20tu%20portafolio%20y%20me%20gustaría%20hablar%20sobre%20un%20proyecto."
-    target="_blank"
-    class="flex items-center gap-3 text-brand-accent hover:text-green-600 transition"
-    >
-    <i class="fa-brands fa-whatsapp text-lg"></i>
-    <span class="font-bold">Enviar mensaje por WhatsApp</span>
-    </a>
-
+        <a href="https://wa.me/527715263209?text=Hola%20Xadanny,%20vi%20tu%20portafolio%20y%20me%20gustaría%20hablar%20sobre%20un%20proyecto."
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex max-w-full items-center gap-3 text-sm font-semibold text-brand-primary transition hover:text-brand-olive sm:text-base">
+          <i class="fa-brands fa-whatsapp shrink-0 text-lg" aria-hidden="true"></i>
+          <span>Enviar mensaje por WhatsApp</span>
+        </a>
+      </div>
     </div>
 
-        
+    <div class="min-w-0">
+      <form #contactForm="ngForm"
+            (submit)="contactForm.form.markAllAsTouched(); contactForm.valid && sendEmail($event)"
+            class="flex min-w-0 flex-col gap-5 sm:gap-6">
+        <div>
+          <label for="contact-name" class="mb-2 block text-sm font-semibold text-brand-dark">Nombre</label>
+          <input id="contact-name" type="text" name="nombre" ngModel required #nombre="ngModel"
+                 autocomplete="name" placeholder="Tu nombre"
+                 class="min-h-12 w-full min-w-0 rounded-lg border border-brand-dark/25 bg-white px-4 py-3 text-base text-brand-dark outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/30"
+                 [class.border-red-500]="nombre.invalid && nombre.touched" />
+          @if (nombre.invalid && nombre.touched) {
+            <p class="mt-1 text-sm text-red-700">El nombre es obligatorio</p>
+          }
         </div>
 
-    
-    <div class="">
-
-    <form 
-    #contactForm="ngForm"
-    (submit)="contactForm.form.markAllAsTouched(); contactForm.valid && sendEmail($event)"
-    class="flex flex-col gap-6"
-    >   
-        <!-- Nombre -->
         <div>
-    <label class="block text-sm font-semibold text-gray-700 mb-1">
-    Nombre
-    </label>
+          <label for="contact-email" class="mb-2 block text-sm font-semibold text-brand-dark">Email</label>
+          <input id="contact-email" type="email" name="email" ngModel required
+                 pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                 #email="ngModel" autocomplete="email" inputmode="email" placeholder="tu@email.com"
+                 class="min-h-12 w-full min-w-0 rounded-lg border border-brand-dark/25 bg-white px-4 py-3 text-base text-brand-dark outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/30"
+                 [class.border-red-500]="email.invalid && email.touched" />
+          @if (email.errors?.['required'] && email.touched) {
+            <p class="mt-1 text-sm text-red-700">El email es obligatorio</p>
+          }
+          @if (email.errors?.['pattern'] && email.touched) {
+            <p class="mt-1 text-sm text-red-700">Ingresa un email válido</p>
+          }
+        </div>
 
-   <input 
-type="text"
-name="nombre"
-ngModel
-required
-#nombre="ngModel"
-placeholder="Tu nombre"
-class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
-[class.border-red-500]="nombre.invalid && nombre.touched"
-/>
-
-    @if(nombre.invalid && nombre.touched){
-    <p class="text-red-500 text-sm mt-1">
-    El nombre es obligatorio
-    </p>
-    }
-
-    </div>
-
-        <!-- Email -->
-     <div>
-<label class="block text-sm font-semibold text-gray-700 mb-1">
-Email
-</label>
-
-<input
-type="email"
-name="email"
-ngModel
-required
-pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-#email="ngModel"
-placeholder="tu@email.com"
-class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
-[class.border-red-500]="email.invalid && email.touched"
-/>
-
-@if(email.errors?.['required'] && email.touched){
-<p class="text-red-500 text-sm mt-1">
-El email es obligatorio
-</p>
-}
-
-@if(email.errors?.['pattern'] && email.touched){
-<p class="text-red-500 text-sm mt-1">
-Ingresa un email válido
-</p>
-}
-
-</div>
-        <!-- Mensaje -->
         <div>
-    <label class="block text-sm font-semibold text-gray-700 mb-1">
-    Mensaje
-    </label>
+          <label for="contact-message" class="mb-2 block text-sm font-semibold text-brand-dark">Mensaje</label>
+          <textarea id="contact-message" name="mensaje" ngModel required #mensaje="ngModel"
+                    rows="5" placeholder="Escribe tu mensaje..."
+                    class="w-full min-w-0 resize-y rounded-lg border border-brand-dark/25 bg-white px-4 py-3 text-base text-brand-dark outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/30"
+                    [class.border-red-500]="mensaje.invalid && mensaje.touched"></textarea>
+          @if (mensaje.invalid && mensaje.touched) {
+            <p class="mt-1 text-sm text-red-700">El mensaje es obligatorio</p>
+          }
+        </div>
 
-    <textarea
-name="mensaje"
-ngModel
-required
-#mensaje="ngModel"
-rows="4"
-placeholder="Escribe tu mensaje..."
-class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
-[class.border-red-500]="mensaje.invalid && mensaje.touched"
-></textarea>
-
-    @if(mensaje.invalid && mensaje.touched){
-    <p class="text-red-500 text-sm mt-1">
-    El mensaje es obligatorio
-    </p>
-    }
-
+        <button type="submit" [disabled]="loading"
+                class="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-brand-primary px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:self-start sm:px-8">
+          {{ loading ? 'Enviando...' : 'Enviar mensaje' }}
+        </button>
+      </form>
     </div>
-
-        <!-- Botón -->
-        <button
-    type="submit"
-   
-    class="bg-brand-primary text-white font-semibold py-3 rounded-lg hover:bg-brand-dark transition disabled:opacity-50"
-    >
-    Enviar mensaje
-    </button>
-
-    </form>
-
-    </div>
-        
-    </div>
-    </div>
-
-
+  </div>
+</section>
