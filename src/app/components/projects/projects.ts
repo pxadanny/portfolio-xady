@@ -8,16 +8,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.css',
 })
 export class Projects {
-  projects = [
-  {
-    titulo: 'Enterprise SaaS Dashboard',
-    descripcion: 'Panel de administración con gestión de datos en tiempo real y gráficas interactivas.',
-    imagen: 'https://img.freepik.com/vector-gratis/panel-usuario-panel-infografia_52683-30026.jpg?w=360',
-    tecnologias: ['Angular', 'Tailwind', 'NgRx'],
-    demo: '#',
-    codigo: '#'
-  }
-  
-  
-];
+  readonly project = {
+    title: 'Simpsonpedia',
+    category: 'Aplicación web · Proyecto personal',
+    description: 'Una experiencia web para explorar el universo de Los Simpson. Reúne personajes, episodios y locaciones en un catálogo interactivo con fichas detalladas, búsqueda global y una colección personal de favoritos.',
+    technologies: ['Angular', 'TypeScript', 'Tailwind CSS', 'RxJS', 'API REST'],
+    features: [
+      'Exploración de personajes, episodios y locaciones',
+      'Búsqueda unificada y descubrimiento aleatorio',
+      'Favoritos guardados en el navegador',
+    ],
+    demo: 'https://pxadanny.github.io/simpsonpedia/characters',
+    code: 'https://github.com/pxadanny/simpsonpedia',
+  };
 }

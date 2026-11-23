@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.project-preview {
+  background:
+    radial-gradient(circle at 20% 30%, rgb(181 140 79 / 16%), transparent 36%),
+    radial-gradient(circle at 85% 80%, rgb(158 139 117 / 16%), transparent 33%),
+    linear-gradient(145deg, #4b0c20 0%, #3b010b 64%, #2a050e 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-preview .group-hover\:rotate-0 {
+    transition: none;
+  }
+}
