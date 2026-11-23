@@ -8,22 +8,21 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about.css',
 })
 export class About {
-
   cards = [
     {
+      icon: 'fa-lightbulb',
+      titulo: 'Curiosidad',
+      descripcion: 'Explorar ideas, cuestionar lo establecido y encontrar nuevas formas de resolver problemas.'
+    },
+    {
+      icon: 'fa-object-group',
+      titulo: 'Diseño con intención',
+      descripcion: 'Cuidar la claridad, la estética y la experiencia de cada interfaz.'
+    },
+    {
       icon: 'fa-code',
-      titulo:'Desarrollo frontend',
-      descripcion:'Creación de interfaces modernas, claras y funcionales utilizando tecnologías web actuales.'
-    },
-    {
-      icon: 'fa-sitemap',
-      titulo:'Arquitectura de aplicaciones',
-      descripcion:'Organización del código y los componentes para construir aplicaciones escalables, ordenadas y fáciles de mantener.'
-    },
-    {
-      icon: 'fa-laptop-code',
-      titulo:'Diseño responsive',
-      descripcion: 'Diseño adaptable que garantiza una experiencia visual óptima en computadoras, tablets y dispositivos móviles.'
-    },
-  ]
+      titulo: 'Atención al detalle',
+      descripcion: 'Construir componentes útiles, ordenados y fáciles de mantener.'
+    }
+  ];
 }

@@ -1,55 +1,47 @@
-<div class="flex justify-center bg-brand-soft/60 px-6 py-20">
+<section class="relative isolate overflow-hidden bg-brand-primary px-6 py-20 text-brand-cream sm:px-10 lg:px-12 lg:py-28">
+  <div aria-hidden="true" class="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-brand-gold/10 blur-[110px]"></div>
 
-  <div class="w-full max-w-6xl flex flex-col gap-16">
-
-    <!-- TITULO -->
-    <div class="flex flex-col gap-4">
-      <h1 class="text-brand-dark text-4xl sm:text-5xl font-black">
-        Stack Tecnológico
-      </h1>
-
-      <p class="text-gray-800 text-lg sm:text-xl font-medium max-w-2xl">
-        Herramientas y lenguajes que utilizo para crear interfaces modernas,
-        funcionales y centradas en la experiencia del usuario.
+  <div class="relative mx-auto max-w-7xl">
+    <div class="mb-11 grid items-end gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
+      <div>
+        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-brand-cream/85">03 / Mi universo tecnológico</p>
+        <h2 class="max-w-3xl font-editorial text-5xl leading-[0.98] text-brand-cream sm:text-6xl lg:text-7xl">
+          Tecnología al servicio de <em class="font-display font-normal text-brand-gold">las ideas.</em>
+        </h2>
+      </div>
+      <p class="max-w-lg text-base leading-8 text-brand-cream/90 lg:ml-auto">
+        Lenguajes, plataformas y herramientas con las que construyo soluciones digitales,
+        desde la experiencia de usuario hasta la lógica y los datos.
       </p>
     </div>
 
-    <!-- CATEGORIAS -->
-    <div *ngFor="let category of skillCategories" class="flex flex-col gap-8">
-
-      <!-- TITULO CATEGORIA -->
-      <div class="flex items-center gap-4">
-        <div class="h-[2px] w-8 bg-brand-accent"></div>
-        <h2 class="text-2xl font-bold text-brand-primary">
-          {{category.titulo}}
-        </h2>
-      </div>
-
-      <!-- GRID SKILLS -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-        <div
-          *ngFor="let skill of category.skills"
-          class="group bg-white/40 backdrop-blur-sm p-6 rounded-xl border border-brand-soft/60
-                 flex flex-col items-center gap-4
-                 transition duration-300
-                 hover:shadow-xl hover:-translate-y-1 hover:border-brand-accent">
-
-          <img
-            [src]="skill.icon"
-            class="w-12 h-12 transition duration-300 group-hover:scale-110"
-          >
-
-          <p class="text-sm font-semibold text-brand-dark text-center">
-            {{skill.titulo}}
-          </p>
-
+    <div class="grid items-stretch gap-5 lg:grid-cols-2">
+      <article *ngFor="let category of skillCategories"
+        class="group flex flex-col rounded-[1.5rem] border border-brand-gold/45 bg-brand-cream p-6 text-brand-dark transition duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-xl hover:shadow-brand-dark/20 sm:p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-olive">
+              <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-brand-olive"></span>
+              {{category.numero}} / {{category.etiqueta}}
+            </p>
+            <h3 class="font-editorial text-3xl leading-tight text-brand-dark sm:text-4xl">{{category.titulo}}</h3>
+          </div>
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brand-gold/70 bg-brand-gold/10 text-lg text-brand-olive">
+            <i class="fa-solid {{category.icon}}" aria-hidden="true"></i>
+          </span>
         </div>
+        <p class="mt-2 max-w-md text-sm leading-6 text-brand-dark/80">{{category.descripcion}}</p>
 
-      </div>
-
+        <div class="mt-6 flex flex-wrap content-start gap-2.5 border-t border-brand-gold/45 pt-5">
+          <div *ngFor="let skill of category.skills"
+            class="inline-flex min-h-11 items-center gap-2 rounded-full border border-brand-primary/25 bg-brand-primary/10 py-1.5 pl-1.5 pr-4 text-sm text-brand-dark transition-colors duration-200 hover:border-brand-gold hover:bg-brand-gold/15">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand-gold/55 bg-brand-cream shadow-sm">
+              <img [src]="skill.icon" alt="" loading="lazy" class="h-[23px] w-[23px] object-contain" />
+            </span>
+            <span class="font-medium">{{skill.titulo}}</span>
+          </div>
+        </div>
+      </article>
     </div>
-
   </div>
-
-</div>
+</section>
