@@ -8,16 +8,18 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the application', () => {
     const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should include the featured projects section', async () => {
     const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
     await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio-xady');
+
+    const element = fixture.nativeElement as HTMLElement;
+    expect(element.querySelector('#projects')).not.toBeNull();
+    expect(element.textContent).toContain('Simpsonpedia');
   });
 });
